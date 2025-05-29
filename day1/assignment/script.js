@@ -62,7 +62,7 @@ function validate(damage) {
 function addText(text, isForTitle) {
     const newP = isForTitle ? document.createElement("h1") : document.createElement("p")
     newP.textContent = text
-    result = document.body.appendChild(newP) //잘못된 걸 집어넣으면 어떻게 될까?
-
+    result = document.body.appendChild(newP) //잘못된 걸 집어넣으면 어떻게 될까? / 노드가 아니라 에러 난다.
+    // console.result("----null appended:", result)
     return true
 }
