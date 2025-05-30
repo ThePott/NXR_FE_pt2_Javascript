@@ -20,6 +20,12 @@ const dateOfBirthInput = document.getElementById("date-of-birth")
 
 //---- form ----
 const form = document.getElementById("form")
+// form.addEventListener("submit", function (event) {
+//     event.preventDefault()
+//     console.log(event.target.name.value) // value 없이는 name="name"인 input node를 가져온다
+//     console.log(event.target.age.value)
+//     console.log(event.target.dateofbirth.value)
+// })
 form.addEventListener("submit", function (event) {
     event.preventDefault()
     console.log(event.target.name.value) // value 없이는 name="name"인 input node를 가져온다
