@@ -17,10 +17,12 @@
 .con-wrap-row {
     display: flex;
 }
+
 .con-wrap-row-gap-3 {
     display: flex;
     gap: 12px;
 }
+
 .con-wrap-row-gap-6 {
     display: flex;
     gap: 24px;
@@ -52,10 +54,12 @@ section#floating-logo-group {
     top: 48px;
     left: 48px;
 }
+
 section#floating-logo-group img {
     width: 48px;
     border-radius: 12px;
 }
+
 section#floating-logo-group p {
     font-size: 30px;
     font-weight: 900;
@@ -70,6 +74,7 @@ form#form {
     border-radius: 12px;
     padding: 24px;
 }
+
 header#header h1 {
     font-size: 30px;
     margin: 0 auto;
@@ -83,10 +88,15 @@ main#main {
     flex-direction: column;
     gap: 24px;
 }
-main#main label, span, p {
+
+main#main label,
+span,
+p {
     font-size: 12px;
 }
-main#main input, textarea {
+
+main#main input,
+textarea {
     display: block;
     width: 100%;
     padding: 8px;
@@ -95,11 +105,13 @@ main#main input, textarea {
     border-radius: 12px;
     margin-top: 4px;
 }
+
 main#main textarea {
     resize: none;
 }
 
-main#main input:focus, textarea:focus {
+main#main input:focus,
+textarea:focus {
     outline-style: solid;
     outline-color: #afaead;
 }
@@ -107,20 +119,24 @@ main#main input:focus, textarea:focus {
 /* main override */
 main#main div#sex-group div {
     margin-top: 12px;
-    
+
 }
+
 main#main div#sex-group input[type="radio"] {
     width: 16px;
     height: 16px;
     appearance: none;
     border-radius: 50%;
 }
+
 main#main div#sex-group input[type="radio"]:active {
     outline: none;
 }
+
 main#main div#sex-group input[type="radio"]:checked {
     outline: 4px solid #F6F2EE;
 }
+
 main#main div#sex-group label {
     font-size: 16px;
     display: flex;
@@ -130,11 +146,39 @@ main#main div#sex-group label {
 
 
 
+footer#footer div:first-child {
+    margin-top: 24px;
+    align-items: center;
+    position: relative;
+}
+footer#footer div:first-child img {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    position: absolute;
+    display: none;
+    border-radius: 6px;
+}
 
-footer#footer label {
+footer#footer div:first-child input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    appearance: none;
+    border: 1px solid #737271;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+footer#footer div:first-child input[type="checkbox"]:checked
+~ img {
+    background-color: #F6F2EE;
+    display: block;
+}
+
+footer#footer div:first-child label {
     font-size: 12px;
     display: block;
-    margin-top: 24px;
 }
 
 footer#footer button {
@@ -145,14 +189,18 @@ footer#footer button {
     border-radius: 12px;
     margin-top: 24px;
 }
+
 footer#footer button:hover {
     border: 1px solid #afaead;
 }
+
 footer#footer button:active {
     background-color: rgb(41, 40, 40);
 }
 
-div#warning-line-group span, a {
+
+footer#footer div#warning-line-group span,
+a {
     font-size: 12px;
 }
 
@@ -163,6 +211,7 @@ footer#footer>a {
     margin-top: 24px;
     display: block;
 }
+
 footer#footer>a:hover {
     text-decoration: underline;
 }
