@@ -17,6 +17,16 @@ const sexInputArray = document.getElementsByName("sex")
 
 const password1Group = document.getElementById("password1Group")
 const password2Group = document.getElementById("password2Group")
+
+const yearDropbox = document.getElementById("year-dropbox")
+const monthDropbox = document.getElementById("month-dropbox")
+const dayDropbox = document.getElementById("day-dropbox")
+
+const buttonIdArray = ["year-button", "month-button", "day-button"]
+const dropboxArray = [yearDropbox, monthDropbox, dayDropbox]
+
+
+
 const submitBtn = document.getElementById("submitBtn")
 const form = document.getElementById("form")
 
@@ -179,3 +189,36 @@ form.addEventListener("submit", function (event) {
     console.log("here")
     alert(alertMsg)
 })
+
+document.body.addEventListener("click", function (event) {
+    const target = event.target
+    console.log(event)
+    updateDropbox(target)
+
+    applySelection(target)
+})
+
+function updateDropbox(target) {
+    const targetId = target.id
+    if (!buttonIdArray.includes(targetId)) {
+        for (const dropbox of dropboxArray) {
+            dropbox.style = ""
+        }
+        return
+    }
+
+    const openIndex = buttonIdArray.indexOf(targetId)
+    const dropbox = dropboxArray[openIndex]
+    dropbox.style = "display: block;"
+
+    const filteredButtonIdArray = buttonIdArray.filter((buttonId) => buttonId !== targetId)
+    for (const buttonId of filteredButtonIdArray) {
+        const closeIndex = buttonIdArray.indexOf(buttonId)
+        const dropbox = dropboxArray[closeIndex]
+        dropbox.style = ""
+    }
+}
+
+function applySelection(target) {
+    // console.log(target)
+}
