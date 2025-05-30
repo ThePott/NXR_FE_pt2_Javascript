@@ -41,7 +41,8 @@ div#full-screen {
 img#wallpaper {
     position: fixed;
     width: 100%;
-    z-index: -1;
+    height: 100%;
+    z-index: -2;
     object-fit: cover;
 }
 
@@ -53,6 +54,7 @@ section#floating-logo-group {
     position: absolute;
     top: 48px;
     left: 48px;
+    z-index: -1;
 }
 
 section#floating-logo-group img {
