@@ -14,9 +14,16 @@
     font-family: noto-sans-kr;
 }
 
+.con-wrap-row {
+    display: flex;
+}
 .con-wrap-row-gap-3 {
     display: flex;
     gap: 12px;
+}
+.con-wrap-row-gap-6 {
+    display: flex;
+    gap: 24px;
 }
 
 div#full-screen {
@@ -76,7 +83,7 @@ main#main {
     flex-direction: column;
     gap: 24px;
 }
-main#main label, span {
+main#main label, span, p {
     font-size: 12px;
 }
 main#main input, textarea {
@@ -93,10 +100,35 @@ main#main textarea {
 }
 
 main#main input:focus, textarea:focus {
-    /* outline: none; */
     outline-style: solid;
     outline-color: #afaead;
 }
+
+/* main override */
+main#main div#sex-group div {
+    margin-top: 12px;
+    
+}
+main#main div#sex-group input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border-radius: 50%;
+}
+main#main div#sex-group input[type="radio"]:active {
+    outline: none;
+}
+main#main div#sex-group input[type="radio"]:checked {
+    outline: 4px solid #F6F2EE;
+}
+main#main div#sex-group label {
+    font-size: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+
+
 
 
 footer#footer label {
