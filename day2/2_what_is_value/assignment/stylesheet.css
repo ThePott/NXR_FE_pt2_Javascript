@@ -31,7 +31,9 @@ div#full-screen {
 /* wallpaper */
 img#wallpaper {
     position: fixed;
+    width: 100%;
     z-index: -1;
+    object-fit: cover;
 }
 
 /* floating-logo */
@@ -56,7 +58,7 @@ section#floating-logo-group p {
 form#form {
     max-width: 480px;
     width: 100%;
-    height: 714px;
+    /* height: 848px; 848픽셀이 최대치 */
     background-color: #323339;
     border-radius: 12px;
     padding: 24px;
@@ -69,31 +71,50 @@ header#header h1 {
 
 /* main */
 main#main {
-    margin-top: 24px;
+    /* margin-top: 24px; */
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
+main#main label, span {
+    font-size: 12px;
+}
+main#main input, textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: rgb(65, 65, 65);
+    border: none;
+    border-radius: 12px;
+    margin-top: 4px;
+}
+main#main textarea {
+    resize: none;
+}
 
-
-
+main#main input:focus, textarea:focus {
+    /* outline: none; */
+    outline-style: solid;
+    outline-color: #afaead;
+}
 
 
 footer#footer label {
     font-size: 12px;
     display: block;
+    margin-top: 24px;
 }
 
 footer#footer button {
     width: 100%;
     background-color: #323339;
-    border: 1px solid #afaead;
+    border: 1px solid #737271;
     padding: 12px;
     border-radius: 12px;
     margin-top: 24px;
 }
 footer#footer button:hover {
-    border: 1px solid #F6F2EE;
+    border: 1px solid #afaead;
 }
 footer#footer button:active {
     background-color: rgb(41, 40, 40);
