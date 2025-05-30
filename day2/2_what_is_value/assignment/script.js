@@ -24,6 +24,7 @@ const dayDropbox = document.getElementById("day-dropbox")
 
 const buttonIdArray = ["year-button", "month-button", "day-button"]
 const dropboxArray = [yearDropbox, monthDropbox, dayDropbox]
+const dropboxIdArray = dropboxArray.map((dropbox) => dropbox.id)
 
 
 
@@ -191,8 +192,8 @@ form.addEventListener("submit", function (event) {
 })
 
 document.body.addEventListener("click", function (event) {
+    // console.log(event)
     const target = event.target
-    console.log(event)
     updateDropbox(target)
 
     applySelection(target)
@@ -220,5 +221,7 @@ function updateDropbox(target) {
 }
 
 function applySelection(target) {
-    // console.log(target)
+    const button = target.parentNode.parentNode.parentNode.children[0]
+    if (button.type !== "button") { return }
+    button.textContent = `${target.textContent}${button.textContent.at(-1)}`
 }
