@@ -23,22 +23,22 @@
             </header>
 
             <main id="main">
-                <div class="input-group">
+                <div>
                     <label>이메일</label>
                     <span>*</span>
                     <input type="text">
                 </div>
-                <div class="input-group">
+                <div>
                     <label>비밀번호</label>
                     <span>*</span>
                     <input type="text">
                 </div>
-                <div class="input-group">
+                <div>
                     <label>비밀번호 확인</label>
                     <span>*</span>
                     <input type="text">
                 </div>
-                <div id="sex-group" class="input-group">
+                <div id="sex-group">
                     <p>성별</p>
                     <div class="con-wrap-row-gap-6">
                         <label for="male">
@@ -51,14 +51,13 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-group">
+                <div>
                     <label>생일</label>
-                    <input type="text">
-                </div>
-
-                <div class="input-group">
-                    <label>자기소개</label>
-                    <textarea name="intro" id="intro"></textarea>
+                    <div id="select-group">
+                        <button id="yearBtn">년</button>
+                        <button id="monthBtn">월</button>
+                        <button id="dayBtn">일</button>
+                    </div>
                 </div>
             </main>
 
@@ -72,7 +71,7 @@
                     </label>
                 </div>
 
-                <button>계속하기</button>
+                <button type="button" id="submitBtn">계속하기</button>
 
                 <div id="warning-line-group">
                     <span>등록하는 순간 HeartTo의</span>
@@ -87,6 +86,12 @@
         </form>
 
     </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
+
+<!-- !!!! todo !!!!
+date of birth button 눌렀을 때 행동 만들어야 
+-->

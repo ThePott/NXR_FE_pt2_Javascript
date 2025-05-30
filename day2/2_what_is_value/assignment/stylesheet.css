@@ -97,8 +97,7 @@ p {
     font-size: 12px;
 }
 
-main#main input,
-textarea {
+main#main input {
     display: block;
     width: 100%;
     padding: 8px;
@@ -108,45 +107,48 @@ textarea {
     margin-top: 4px;
 }
 
-main#main textarea {
-    resize: none;
-}
-
-main#main input:focus,
-textarea:focus {
+main#main input:focus {
     outline-style: solid;
     outline-color: #afaead;
 }
 
 /* main override */
 main#main div#sex-group div {
-    margin-top: 12px;
-
+    margin-top: 4px;
 }
-
 main#main div#sex-group input[type="radio"] {
     width: 16px;
     height: 16px;
     appearance: none;
     border-radius: 50%;
 }
-
 main#main div#sex-group input[type="radio"]:active {
     outline: none;
 }
-
 main#main div#sex-group input[type="radio"]:checked {
     outline: 4px solid #F6F2EE;
 }
-
 main#main div#sex-group label {
     font-size: 16px;
     display: flex;
     gap: 12px;
 }
 
-
-
+main#main div div#select-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+main#main div div#select-group button {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: none
+}
 
 footer#footer div:first-child {
     margin-top: 24px;
