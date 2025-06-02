@@ -1,8 +1,10 @@
-// for (i = 0; i < 30; i++) {
-//     console.log(`<li>${i + 1}</li>`)
-// }
+const array = []
+for(i = 0; i < 10; i++) {
+    const randomNumber = Math.floor(Math.random() * 100)
+    array.push(randomNumber)
+}
+array.sort()
+console.log(array)
 
-const array = [false, true, false]
-
-const result = array.reduce((prev, next) => prev && next)
-console.log(result)
+array.sort((a, b) => a - b)
+console.log(array)
