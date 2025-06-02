@@ -1,0 +1,18 @@
+#container {
+    background-color: aqua;
+    width: 300px;
+}
+
+#second {
+    /* display: none; */
+    height: 0px;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 2s;
+}
+#second.show {
+    height: auto;
+    height: calc-size(auto);
+    transition-property: height;
+    transition-duration: 2s;
+}

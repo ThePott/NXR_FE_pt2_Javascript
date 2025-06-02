@@ -1,9 +1,14 @@
+const confirmResult = confirm("이 페이지는 보안되지 않았습니다. 평소 사용하는 비밀번호를 절대 입력하지 마세요. 안전하지 않습니다.")
+if (!confirmResult) {
+    window.location.href = "/"
+}
+
 let email
 let password1
 let password2
 let sex
 
-let isEnable = false
+let isEnabled = false
 const checkDict = {
     "email": false,
     "password": false,
@@ -26,14 +31,16 @@ const buttonIdArray = ["year-button", "month-button", "day-button"]
 const dropboxArray = [yearDropbox, monthDropbox, dayDropbox]
 const dropboxIdArray = dropboxArray.map((dropbox) => dropbox.id)
 
-
-
 const submitBtn = document.getElementById("submitBtn")
 const form = document.getElementById("form")
+const fullScreen = document.getElementById("full-screen")
+
 
 emailInput.addEventListener("keyup", function (event) {
     email = event.target.value
-    console.log(email)
+    if (email.length > 0) {
+        checkDict["email"] = true
+    }
 })
 password1Input.addEventListener("keyup", function (event) {
     handlePassword1Change(event)
@@ -161,34 +168,40 @@ function checkPassword() {
 
 function updateCheckDict(key, boolValue) {
     checkDict[key] = boolValue
-
     const boolArray = Object.values(checkDict)
-    isEnable = boolArray.reduce((prevValue, nextValue) => prevValue || nextValue)
-    console.log("---- is enable:", isEnable)
+    
+    isEnabled = boolArray.reduce((prevValue, nextValue) => {
+        return prevValue && nextValue
+    })
+
+    submitBtn.disabled = !isEnabled
+
+    if (isEnabled) {
+        submitBtn.style = "opacity: 1.0;"
+    } else {
+        submitBtn.style = "opacity: 0.3;"
+    }
 }
 
 
-
-
-
-
 form.addEventListener("submit", function (event) {
-    event.defaultPrevented
+    event.preventDefault()
+
+    const confirmResult = confirm("이 페이지는 보안되지 않았습니다. 비밀번호란에 남이 봐도 상관없는 것을 적었나요?")
+    if (!confirmResult) {
+        alert("안전하지 않습니다. 새로고침합니다.")
+        window.location.href = "/"
+    }
+
 
     email = event.target.email.value
-    password1 = event.target.password1.value
-    password2 = event.target.password2.value
-    sex = event.target.sex.value
+    // password1 = event.target.password1.value
+    // password2 = event.target.password2.value
+    // sex = event.target.sex.value
+
+    updatePage(email)
 
 
-    const alertMsg = `
-    ${email}
-    ${password1}
-    ${password2}
-    ${sex}
-    `
-    console.log("here")
-    alert(alertMsg)
 })
 
 document.body.addEventListener("click", function (event) {
@@ -225,3 +238,19 @@ function applySelection(target) {
     if (button.type !== "button") { return }
     button.textContent = `${target.textContent}${button.textContent.at(-1)}`
 }
+
+
+function updatePage(email) {
+    const h1 = document.createElement("h1")
+    h1.style = "font-size: 30px; "
+    h1.textContent = `가입이 완료되었습니다! (아님)`
+
+    const p = document.createElement("p")
+    p.style = "font-size: 16px; margin-top: 24px;"
+    p.textContent = ` ${email}로 선물을 보내드렸으니 확인해주세요! (아님)`
+
+    form.innerHTML = ""
+    form.appendChild(h1)
+    form.appendChild(p)
+}
+

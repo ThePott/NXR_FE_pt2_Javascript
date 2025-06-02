@@ -72,9 +72,14 @@ form#form {
     max-width: 480px;
     width: 100%;
     /* height: 848px; 848픽셀이 최대치 */
+    height: calc-size(auto);
     background-color: #27282d;
     border-radius: 12px;
     padding: 24px;
+
+    /* transition-property: height;
+    transition-duration: 2s; */
+
 }
 
 header#header h1 {
@@ -217,6 +222,7 @@ footer#footer button {
     padding: 12px;
     border-radius: 12px;
     margin-top: 24px;
+    opacity: 0.3;
 }
 
 footer#footer button:hover {
